@@ -24,7 +24,7 @@ body {
 
 }
 
-.halbkrei{
+.halbkreis{
     background-color: coral;
     margin-top: -400px;
     margin-left: 20%;
@@ -33,7 +33,7 @@ body {
     border-radius: 50%;
     text-align: center;
 }
-.halbkreih1{
+.halbkreis{
     color: cornsilk;
     text-align: center;
     font-family: sans-serif;
