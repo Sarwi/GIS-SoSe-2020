@@ -10,3 +10,6 @@ li{
 a {
     color: peachpuff;
 }
+body {
+    background-image: url("bg.png");
+}
