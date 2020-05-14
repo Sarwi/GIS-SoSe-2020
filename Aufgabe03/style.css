@@ -17,5 +17,5 @@ body {
 }
 .myDiv{
     width: 800px;
-    vertical-align: middle;
+    margin: 0 auto;
 }
