@@ -22,7 +22,20 @@ body {
 
 }
 
-.myDiv{
-    width: 800px;
-    margin: 0px auto;
+.halbkrei{
+    background-color: coral;
+    margin-top: -400px;
+    margin-left: 20%;
+    width: 900px;
+    height: 900px;
+    border-radius: 50%;
+    text-align: center;
+}
+.halbkreih1{
+    color: cornsilk;
+    text-align: center;
+    font-family: sans-serif;
+    padding-top: 500px;
+    font-size: 5;
+    margin-bottom: 0px;
 }
