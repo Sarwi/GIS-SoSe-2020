@@ -8,26 +8,41 @@
 </head>
 <body>
     <header>
-        <nav>
-            <ul>
-                <li><a href="index.html">Portfolio</a></li>
-                <li><a href="Aboutme.html">About me</a></li>
-                <li><a href="Kontakt.html">Kontakt</a></li>
-            </ul>
+        <nav class="nav">
+            
+                <a href="index.html" class="button">Portfolio</a>&nbsp;
+                <a href="Aboutme.html" class="button">About me</a>&nbsp;
+                <a href="Kontakt.html" class="button" id="aktuell">Kontakt</a>
+        
         </nav>
     </header>
     <main>
-      
+        <div class="kreis">
         <h1>Kontakt</h1>
+        </div>
         <p>Hier unter meiner E-Mail Adresse und meinem Instagram könnt ihr mich erreichen</p>
         <table>
             <tr>
-                 <td> <a href="https://www.instagram.com/sarah__wild/"><img src="instagram2.png" alt="Instagram"></a></td>
+                 <td> <a href="https://www.instagram.com/sarah__wild/"><img src="instagram2.png" alt="Instagram" class="instagram"></a></td>
                  <td> <i>klick auf den button</i></td>
             </tr>
             <tr>
                 <td>E-Mail</td>
                 <td>sarahwild1998@web.de</td>
+            </tr>
+        </table>
+
+                <br>
+                <br>
+                
+                <form>
+                    <h3>Formular</h3>
+                    <input name="name" type="text" class="input" placeholder="Vorname" />
+                    <input name="name" type="text" class="input" placeholder="Nachname" />
+                    <input name="email" type="text" class="input" placeholder="Email" />
+                    <textarea name="text" class="input" placeholder="Nachricht"></textarea>
+                    <input type="submit" value="Senden" />
+                    </form>
             </tr>
         </table>
 
