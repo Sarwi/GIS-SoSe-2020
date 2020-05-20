@@ -41,7 +41,20 @@ button{
 }
 
 
-
+nav {
+    position: fixed;
+    top: 0px;
+    margin-left: auto;
+    margin-right: auto;
+    list-style-type: none;
+    font-size: 10px;
+    width: 300px;
+    height: 15px;
+    margin-top: 0px;
+    padding: 5px;
+    top: 0px;
+    right: 10%;
+}
     
     .nav a{
         position: sticky;
