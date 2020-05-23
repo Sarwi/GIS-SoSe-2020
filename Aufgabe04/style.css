@@ -108,7 +108,7 @@ div > p{
     }
     @media screen and (max-witdh: 600px){
         h1{
-            text-align: center;
+            text-align: left;
             margin-right: auto;
     }
     .header {
