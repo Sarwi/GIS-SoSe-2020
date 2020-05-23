@@ -35,7 +35,7 @@ body {
 }
 
 div > p{
-    color: plum;
+    color: slategray;
    
 }
 
@@ -101,17 +101,19 @@ div > p{
         width: 120px;
         margin: 5px;
         border-radius: 3px;
-        background-color: darksalmon;
+        background-color: darkmagenta;
+        color: whitesmoke;
     }
 /*Smartphone Darstellung*/
 @media screen and (max-width: 600px){
     #header{
         width: 100%;
         height: 80px;
+        
     }
     .Produkte{
         display: flex;
-        flex-wrap: wrap ;
+        flex-direction: row ;
 
     }
      
@@ -121,8 +123,8 @@ div > p{
      }
      img[alt=logo]{
          margin-top: 12px;
-         width: 40px;
-         height: 40px;
+         width: 60px;
+         height: 60px;
      }
      div>a {
          color: blue;
