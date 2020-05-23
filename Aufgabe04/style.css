@@ -106,3 +106,23 @@ div > p{
         background-color: darkmagenta;
         color: whitesmoke;
     }
+    @media screen and (max-witdh: 600px){
+        h1{
+            padding-left: 50px;
+            font-size: 30px;
+            text-indent: 20px;
+    }
+    .header {
+        background-color: plum;
+        color: whitesmoke;
+        padding: 30px;
+        font-size: 20px;
+        width: auto;
+    }
+    img[alt=logo]{
+        margin-top: 12px;
+        width: 75px;
+        height: 75px;
+
+}
+    }
