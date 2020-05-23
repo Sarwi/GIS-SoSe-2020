@@ -109,8 +109,8 @@ div > p{
     @media screen and (max-witdh: 600px){
         h1{
             text-align: left;
-            padding-left: 20px;
-            font-size: 20px;
+            padding-left: 5px;
+            font-size: 5px;
            
 
     }
