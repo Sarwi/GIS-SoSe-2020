@@ -111,13 +111,12 @@ div > p{
             text-align: left;
             padding-left: 5px;
             font-size: 5px;
-            color: blue;
            
 
     }
     .header {
         background-color: plum;
-        color: whitesmoke;
+        color: blue;
         padding: 20px;
         font-size: 10px;
         width: auto;
