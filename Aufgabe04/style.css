@@ -109,11 +109,10 @@ div > p{
     /*Smartphone*/
     @media screen and (max-witdh: 600px){
     h1{
+    font-size: 10px;
     text-align: left;
-           
-           
-
     }
+
     .header {
         background-color: plum;
         color: whitesmoke;
