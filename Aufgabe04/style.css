@@ -117,9 +117,10 @@ div > p{
     .header {
         background-color: plum;
         color: whitesmoke;
-        padding: 30px;
-        font-size: 20px;
+        padding: 20px;
+        font-size: 10px;
         width: auto;
+        text-align: left;
     }
     img[alt=logo]{
         margin-top: 12px;
