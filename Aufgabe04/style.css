@@ -109,7 +109,10 @@ div > p{
     @media screen and (max-witdh: 600px){
         h1{
             text-align: left;
-            margin-right: auto;
+            padding-left: 20px;
+            font-size: 20px;
+           
+
     }
     .header {
         background-color: plum;
