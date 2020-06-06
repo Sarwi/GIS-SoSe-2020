@@ -89,14 +89,14 @@ var aufgabe06;
         kategorie: "fruchtgummi",
         bild: "Cola.jpg",
         name: "Cola Fläschchen",
-        preis: 1.22,
+        preis: 1.15,
         beschreibung: "Schmeckt wie eine kalte Cola an heißen Sommer Tagen"
     };
     let schnecken = {
         kategorie: "fruchtgummi",
         bild: "Fruchschnecken.jpg",
         name: "Fruchtschnecke",
-        preis: 1.11,
+        preis: 1.14,
         beschreibung: "so schön flutschig, wie Schneckenschleim"
     };
     let weingummi = {
@@ -124,7 +124,7 @@ var aufgabe06;
         kategorie: "fruchtgummi",
         bild: "Obstsalat.jpg",
         name: "Obstsalat",
-        preis: 1.22,
+        preis: 1.26,
         beschreibung: "Für etwas Fruchtiges zwischendurch unser fruchtiger Obstsalat"
     };
     let rainbow = {
@@ -138,7 +138,7 @@ var aufgabe06;
         kategorie: "fruchtgummi",
         bild: "Schlangen.jpg",
         name: "Gummischlangen",
-        preis: 1.22,
+        preis: 1.27,
         beschreibung: "Nichts für Angsthasen"
     };
     let schlümpfe = {
@@ -208,14 +208,26 @@ var aufgabe06;
             default:
                 break;
         }
-        let einkaufZaehler = 0;
-        let preis = 0;
-        function wagenButton(_event) {
-            einkaufZaehler++;
-            console.log(einkaufZaehler);
-            preis += parseFloat(_event.target?.getAttribute("preis"));
-            console.log(preis);
+    }
+    let einkaufZaehler = 0;
+    let preis = 0;
+    //Zahl in Bubble anzeigen 
+    let zaehlerAnzeigen = document.createElement("p");
+    //Bubble DIV 
+    let anzahlBlase = document.createElement("div");
+    anzahlBlase.id = "anzahlBlase";
+    function wagenButton(_event) {
+        einkaufZaehler++;
+        console.log(einkaufZaehler);
+        preis += parseFloat(_event.target?.getAttribute("preis"));
+        console.log(preis);
+        //Blase erstellen bei min. 1 Artikel
+        if (einkaufZaehler >= 0) {
+            document.getElementById("artikelBlase")?.appendChild(anzahlBlase);
         }
+        //Zahl in Blase anzeigen
+        zaehlerAnzeigen.innerHTML = "" + einkaufZaehler;
+        document.getElementById("anzahlBlase")?.appendChild(zaehlerAnzeigen);
     }
 })(aufgabe06 || (aufgabe06 = {}));
 //# sourceMappingURL=script.js.map

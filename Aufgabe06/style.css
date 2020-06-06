@@ -131,4 +131,17 @@ background-color: whitesmoke;
         color: whitesmoke;
         
     }
-    
+    #anzahlBlase{
+        background-color: darkmagenta;
+        
+        border-radius: 20px;
+        margin-top: 20px;
+        width: 20px;
+        height: 20px;
+        margin-left: -15px;
+    }
+    #anzahlBlase>p{
+        color: white;
+        text-align: center;
+        font-size: unset;
+    }

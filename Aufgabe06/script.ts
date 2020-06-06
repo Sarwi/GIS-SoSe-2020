@@ -99,14 +99,14 @@ namespace aufgabe06 {
         kategorie: "fruchtgummi",
         bild: "Cola.jpg",
         name: "Cola Fläschchen",
-        preis: 1.22,
+        preis: 1.15,
         beschreibung: "Schmeckt wie eine kalte Cola an heißen Sommer Tagen"
     };
     let schnecken: Süßigkeit = {
         kategorie: "fruchtgummi",
         bild: "Fruchschnecken.jpg",
         name: "Fruchtschnecke",
-        preis: 1.11,
+        preis: 1.14,
         beschreibung: "so schön flutschig, wie Schneckenschleim"
     };
     let weingummi: Süßigkeit = {
@@ -134,9 +134,9 @@ namespace aufgabe06 {
         kategorie: "fruchtgummi",
         bild: "Obstsalat.jpg",
         name: "Obstsalat",
-        preis: 1.22,
+        preis: 1.26,
         beschreibung: "Für etwas Fruchtiges zwischendurch unser fruchtiger Obstsalat"
-    
+
     };
     let rainbow: Süßigkeit = {
         kategorie: "fruchtgummi",
@@ -149,7 +149,7 @@ namespace aufgabe06 {
         kategorie: "fruchtgummi",
         bild: "Schlangen.jpg",
         name: "Gummischlangen",
-        preis: 1.22,
+        preis: 1.27,
         beschreibung: "Nichts für Angsthasen"
     };
     let schlümpfe: Süßigkeit = {
@@ -217,6 +217,7 @@ namespace aufgabe06 {
         indenEinkaufwagen.addEventListener("click", wagenButton);
         indenEinkaufwagen.setAttribute("preis", süßigkeit[index].preis.toString());
 
+
         switch (süßigkeit[index].kategorie) {
             case "schokolade":
                 let getContainerSchokolade: HTMLElement = document.getElementById("schokolade")!;
@@ -227,22 +228,40 @@ namespace aufgabe06 {
                 let getContainerFruchtgummi: HTMLElement = document.getElementById("fruchtgummi")!;
                 getContainerFruchtgummi.appendChild(newDiv);
                 break;
-                default:
+            default:
                 break;
         }
-        let einkaufZaehler: number = 0;
-        let preis: number = 0;
-
-        function wagenButton(_event: Event): void {
-            einkaufZaehler++;
-            console.log(einkaufZaehler);
-
-            preis += parseFloat((<HTMLButtonElement>_event.target)?.getAttribute("preis")!);
-            console.log(preis);
-        }
     }
+
+    let einkaufZaehler: number = 0;
+    let preis: number = 0;
+    //Zahl in Bubble anzeigen 
+    let zaehlerAnzeigen: HTMLParagraphElement = document.createElement("p");
+    //Bubble DIV 
+    let anzahlBlase: HTMLDivElement = document.createElement("div");
+    anzahlBlase.id = "anzahlBlase";
+
+    function wagenButton(_event: Event): void {
+        einkaufZaehler++;
+        console.log(einkaufZaehler);
+
+        preis += parseFloat((<HTMLButtonElement>_event.target)?.getAttribute("preis")!);
+        console.log(preis);
+
+        //Blase erstellen bei min. 1 Artikel
+        if (einkaufZaehler >= 0) {
+            document.getElementById("artikelBlase")?.appendChild(anzahlBlase);
+        }
+
+        //Zahl in Blase anzeigen
+        zaehlerAnzeigen.innerHTML = "" + einkaufZaehler;
+        document.getElementById("anzahlBlase")?.appendChild(zaehlerAnzeigen);
+
+
+
+
+
+    }
+
+
 }
-
-    
-
-    
