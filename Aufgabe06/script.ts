@@ -1,4 +1,3 @@
-
 namespace aufgabe06 {
     interface Süßigkeit {
         kategorie: string;
@@ -95,6 +94,7 @@ namespace aufgabe06 {
         beschreibung: "nussig, cremig, knackig"
     };
 
+    //fruchtgummi
     let cola: Süßigkeit = {
         kategorie: "fruchtgummi",
         bild: "Cola.jpg",
@@ -256,12 +256,35 @@ namespace aufgabe06 {
         //Zahl in Blase anzeigen
         zaehlerAnzeigen.innerHTML = "" + einkaufZaehler;
         document.getElementById("anzahlBlase")?.appendChild(zaehlerAnzeigen);
+    }
+    function handleCategoryClick(this: HTMLElement, _click: MouseEvent): void {
+        switch (this.getAttribute("id")) {
+            case "schokoladebtn":
+                schokolade();
+                break;
+            case "fruchtgummibtn":
+                fruchtgummi();
+                break;
 
+        }
+        function schokolade(): void {
+            (<HTMLElement>document.getElementById("schokolade")).style.display = "block";
+            (<HTMLElement>document.getElementById("fruchtgummi")).style.display = "none";
 
+        }
 
-
-
+        function fruchtgummi(): void {
+            (<HTMLElement>document.getElementById("fruchtgummi")).style.display = "block";
+            (<HTMLElement>document.getElementById("schokolade")).style.display = "none";
+        }
     }
 
+    //Neue Variable erstellen, Verlinkung zum Button 
+    let schokoladeButton: HTMLElement = <HTMLElement>document.querySelector("#schokoladebtn");
+    schokoladeButton.addEventListener("click", handleCategoryClick.bind(schokoladeButton));
+
+    let fruchtgummiButton: HTMLElement = <HTMLElement>document.querySelector("#fruchtgummibtn");
+    fruchtgummiButton.addEventListener("click", handleCategoryClick.bind(fruchtgummiButton));
 
 }
+

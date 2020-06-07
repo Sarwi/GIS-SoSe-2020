@@ -85,6 +85,7 @@ var aufgabe06;
         preis: 1.22,
         beschreibung: "nussig, cremig, knackig"
     };
+    //fruchtgummi
     let cola = {
         kategorie: "fruchtgummi",
         bild: "Cola.jpg",
@@ -229,5 +230,28 @@ var aufgabe06;
         zaehlerAnzeigen.innerHTML = "" + einkaufZaehler;
         document.getElementById("anzahlBlase")?.appendChild(zaehlerAnzeigen);
     }
+    function handleCategoryClick(_click) {
+        switch (this.getAttribute("id")) {
+            case "schokoladebtn":
+                schokolade();
+                break;
+            case "fruchtgummibtn":
+                fruchtgummi();
+                break;
+        }
+        function schokolade() {
+            document.getElementById("schokolade").style.display = "block";
+            document.getElementById("fruchtgummi").style.display = "none";
+        }
+        function fruchtgummi() {
+            document.getElementById("fruchtgummi").style.display = "block";
+            document.getElementById("schokolade").style.display = "none";
+        }
+    }
+    //Neue Variable erstellen, Verlinkung zum Button 
+    let schokoladeButton = document.querySelector("#schokoladebtn");
+    schokoladeButton.addEventListener("click", handleCategoryClick.bind(schokoladeButton));
+    let fruchtgummiButton = document.querySelector("#fruchtgummibtn");
+    fruchtgummiButton.addEventListener("click", handleCategoryClick.bind(fruchtgummiButton));
 })(aufgabe06 || (aufgabe06 = {}));
 //# sourceMappingURL=script.js.map
