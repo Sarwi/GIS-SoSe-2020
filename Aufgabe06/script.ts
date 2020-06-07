@@ -235,7 +235,7 @@ namespace aufgabe06 {
 
     let einkaufZaehler: number = 0;
     let preis: number = 0;
-    let zaehlerAnzeigen: HTMLParagraphElement = document.createElement("p"); //Zahl Anzogen 
+    let zaehlerAnzeigen: HTMLParagraphElement = document.createElement("p"); //Zahl Anzeigen 
     let anzahlBlase: HTMLDivElement = document.createElement("div");
     anzahlBlase.id = "anzahlBlase"; //div erstellen 
 
@@ -251,7 +251,7 @@ namespace aufgabe06 {
             document.getElementById("artikelBlase")?.appendChild(anzahlBlase);
         }
 
-        //Zahl in Blase anzeigen
+        //Zahl anzeigen 
         zaehlerAnzeigen.innerHTML = "" + einkaufZaehler;
         document.getElementById("anzahlBlase")?.appendChild(zaehlerAnzeigen);
     }
@@ -277,7 +277,7 @@ namespace aufgabe06 {
         }
     }
 
-    //Neue Variable erstellen, Verlinkung zum Button 
+    //Variable erstellen, verlinken zum Button zur Html seite id in html anlegen  
     let schokoladeButton: HTMLElement = <HTMLElement>document.querySelector("#schokoladeAnzeige");
     schokoladeButton.addEventListener("click", handleCategoryClick.bind(schokoladeButton));
 
