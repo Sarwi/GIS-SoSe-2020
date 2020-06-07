@@ -7,7 +7,7 @@ namespace aufgabe06 {
         beschreibung: string;
 
     }
-
+    //KAtegorie schokolade
     let mandeln: Süßigkeit = {
         kategorie: "schokolade",
         bild: "gebrannteMandeln.jpg",
@@ -94,7 +94,7 @@ namespace aufgabe06 {
         beschreibung: "nussig, cremig, knackig"
     };
 
-    //fruchtgummi
+    //Kategorie fruchtgummi 
     let cola: Süßigkeit = {
         kategorie: "fruchtgummi",
         bild: "Cola.jpg",
@@ -185,18 +185,18 @@ namespace aufgabe06 {
 
 
     for (let index: number = 0; index < süßigkeit.length; index++) {
-        //div erstellen 
+        //div erstellen und anlegen um drauf zugreifen zu können 
         let newDiv: HTMLDivElement = document.createElement("div");
         newDiv.id = "produkt" + index;
         document.getElementById("schokolade")?.appendChild(newDiv);
 
 
-        //Bild 
+        //Bild anlegen um es zu erkennen 
         let imgSüßigkeit: HTMLImageElement = document.createElement("img");
         imgSüßigkeit.src = süßigkeit[index].bild;
         document.getElementById("produkt" + index)?.appendChild(imgSüßigkeit);
 
-        //Name
+        //Name anlegen 
         let nameSüßigkeit: HTMLParagraphElement = document.createElement("p");
         nameSüßigkeit.innerHTML = süßigkeit[index].name;
         document.getElementById("produkt" + index)?.appendChild(nameSüßigkeit);
@@ -205,12 +205,12 @@ namespace aufgabe06 {
         preisSüßigkeit.innerHTML = süßigkeit[index].preis + "€";
         document.getElementById("produkt" + index)?.appendChild(preisSüßigkeit);
 
-        //Beschreibung
+        //Beschreibung anlegen 
         let beschreibungSüßigkeit: HTMLParagraphElement = document.createElement("p");
         beschreibungSüßigkeit.innerHTML = süßigkeit[index].beschreibung;
         document.getElementById("produkt" + index)?.appendChild(beschreibungSüßigkeit);
 
-        //in den Einkaufswagen button 
+        //in den Einkaufswagen button anlegen 
         let indenEinkaufwagen: HTMLButtonElement = document.createElement("button");
         indenEinkaufwagen.innerHTML = "in den Einkausfwagen";
         document.getElementById("produkt" + index)?.appendChild(indenEinkaufwagen);
@@ -235,11 +235,9 @@ namespace aufgabe06 {
 
     let einkaufZaehler: number = 0;
     let preis: number = 0;
-    //Zahl in Bubble anzeigen 
-    let zaehlerAnzeigen: HTMLParagraphElement = document.createElement("p");
-    //Bubble DIV 
+    let zaehlerAnzeigen: HTMLParagraphElement = document.createElement("p"); //Zahl Anzogen 
     let anzahlBlase: HTMLDivElement = document.createElement("div");
-    anzahlBlase.id = "anzahlBlase";
+    anzahlBlase.id = "anzahlBlase"; //div erstellen 
 
     function wagenButton(_event: Event): void {
         einkaufZaehler++;
@@ -259,10 +257,10 @@ namespace aufgabe06 {
     }
     function handleCategoryClick(this: HTMLElement, _click: MouseEvent): void {
         switch (this.getAttribute("id")) {
-            case "schokoladebtn":
+            case "schokoladeAnzeige":
                 schokolade();
                 break;
-            case "fruchtgummibtn":
+            case "fruchtgummiAnzeige":
                 fruchtgummi();
                 break;
 
@@ -280,10 +278,10 @@ namespace aufgabe06 {
     }
 
     //Neue Variable erstellen, Verlinkung zum Button 
-    let schokoladeButton: HTMLElement = <HTMLElement>document.querySelector("#schokoladebtn");
+    let schokoladeButton: HTMLElement = <HTMLElement>document.querySelector("#schokoladeAnzeige");
     schokoladeButton.addEventListener("click", handleCategoryClick.bind(schokoladeButton));
 
-    let fruchtgummiButton: HTMLElement = <HTMLElement>document.querySelector("#fruchtgummibtn");
+    let fruchtgummiButton: HTMLElement = <HTMLElement>document.querySelector("#fruchtgummiAnzeige");
     fruchtgummiButton.addEventListener("click", handleCategoryClick.bind(fruchtgummiButton));
 
 }
