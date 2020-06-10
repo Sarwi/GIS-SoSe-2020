@@ -1,0 +1,170 @@
+[
+    {
+        "kategorie": "schokolade",
+        "bild": "gebrannteMandeln.jpg",
+        "name": "gebrannte Mandeln",
+        "preis": 1.22,
+        "beschreibung": "nussig,zimtig"
+    },
+    {
+        "kategorie": "schokolade",
+        "bild": "Erdbeere.png",
+        "name": "Erdbeerschokolade",
+        "preis": 1.33,
+        "beschreibung": "fruchtig, pricklend"
+    },
+    {
+        "kategorie": "schokolade",
+        "bild": "Caramel.jpg",
+        "name": "Karamelschokolade",
+        "preis": 1.05,
+        "beschreibung": "cremig, süß"
+    },
+    {
+        "kategorie": "schokolade",
+        "bild": "AllerleiSchokolade.jpg",
+        "name": "Allerlei",
+        "preis": 1.44,
+        "beschreibung": "Beeren, kokosflocken, Nüsse"
+    },
+    {
+        "kategorie": "schokolade",
+        "bild": "Beerenschokolade.jpg",
+        "name": "Beerenschokolade",
+        "preis": 1.33,
+        "beschreibung": "Heidelbeeren, Passionsfrucht"
+    },
+    {
+        "kategorie": "schokolade",
+        "bild": "Butterkeksschokolade.jpg",
+        "name": "Keksschokolade",
+        "preis": 1.11,
+        "beschreibung": "knusprig"
+    },
+    {
+        "kategorie": "schokolade",
+        "bild": "Nougat.png",
+        "name": "Nougatschokolade",
+        "preis": 1.11,
+        "beschreibung": "nusiig, cremig"
+    },
+    {
+        "kategorie": "schokolade",
+        "bild": "Smarties.jpg",
+        "name": "Smartieesschokolade",
+        "preis": 1.22,
+        "beschreibung": "zart, reichlich gefüllt"
+    },
+    {
+        "kategorie": "schokolade",
+        "bild": "Vollmilch.jpg",
+        "name": "Vollmilchschokolade",
+        "preis": 1.04,
+        "beschreibung": "Der Klassiker unter der Schokolade"
+    },
+    {
+        "kategorie": "schokolade",
+        "bild": "Weisse.jpg",
+        "name": "Weißeschokolade",
+        "preis": 1.09,
+        "beschreibung": "cremig, vanillearoma"
+    },
+    {
+        "kategorie": "schokolade",
+        "bild": "Zartbitter.jpg",
+        "name": "Zartbitterschokolade",
+        "preis": 1.09,
+        "beschreibung": "zart, bitter, knackig"
+    },
+    {
+        "kategorie": "schokolade",
+        "bild": "Nussschokolade.jpg",
+        "name": "Nussschokolade",
+        "preis": 1.22,
+        "beschreibung": "nussig, cremig, knackig"
+    },
+    {
+        "kategorie": "fruchtgummi",
+        "bild": "Cola.jpg",
+        "name": "Cola Fläschchen",
+        "preis": 1.15,
+        "beschreibung": "Schmeckt wie eine kalte Cola an heißen Sommer Tagen"
+    },
+    {
+        "kategorie": "fruchtgummi",
+        "bild": "Fruchschnecken.jpg",
+        "name": "Fruchtschnecke",
+        "preis": 1.14,
+        "beschreibung": "so schön flutschig, wie Schneckenschleim"
+    },
+    {
+        "kategorie": "fruchtgummi",
+        "bild": "Fruchtige_Weingummi.jpg",
+        "name": "Weingummi ",
+        "preis": 1.33,
+        "beschreibung": "sorgen für ein beschwipstes Gefühl"
+    },
+    {
+        "kategorie": "fruchtgummi",
+        "bild": "Lachgummis.jpg",
+        "name": "Lachgummis",
+        "preis": 1.22,
+        "beschreibung": "Sorgen für gute Laune"
+    },
+    {
+        "kategorie": "fruchtgummi",
+        "bild": "Lakritze.jpg",
+        "name": "Lakritze",
+        "preis": 0.99,
+        "beschreibung": "Einfach nur lecker!"
+    },
+    {
+        "kategorie": "fruchtgummi",
+        "bild": "Obstsalat.jpg",
+        "name": "Obstsalat",
+        "preis": 1.26,
+        "beschreibung": "Für etwas Fruchtiges zwischendurch unser fruchtiger Obstsalat"
+    },
+    {
+        "kategorie": "fruchtgummi",
+        "bild": "Rainbow.jpg",
+        "name": "Rainbow gummi",
+        "preis": 1.09,
+        "beschreibung": "Sorgt für mehr Farbe in deinem Leben"
+    },
+    {
+        "kategorie": "fruchtgummi",
+        "bild": "Schlangen.jpg",
+        "name": "Gummischlangen",
+        "preis": 1.27,
+        "beschreibung": "Nichts für Angsthasen"
+    },
+    {
+        "kategorie": "fruchtgummi",
+        "bild": "Schlumpfe1.jpg",
+        "name": "Schlümpfe",
+        "preis": 1.09,
+        "beschreibung": "sorgt für schöne Kindheitserinnerungen"
+    },
+    {
+        "kategorie": "fruchtgummi",
+        "bild": "Superhirn.jpg",
+        "name": "Gummihirn",
+        "preis": 1.55,
+        "beschreibung": "erhöht IQ"
+    },
+    {
+        "kategorie": "fruchtgummi",
+        "bild": "Wassermelone.jpg",
+        "name": "Wassermelone ",
+        "preis": 1.05,
+        "beschreibung": "Sorgt für Sommergefühle"
+    },
+    {
+        "kategorie": "fruchtgummi",
+        "bild": "Schnuller.jpg",
+        "name": "Schnuller",
+        "preis": 1.25,
+        "beschreibung": "Schweigen ist Gold"
+    }
+] 
