@@ -1,4 +1,5 @@
 namespace  aufgabe07 {
+    // Ich weiß Teilaufgabe2 funktioniert nicht :((
     window.addEventListener("load", init);
 
     let contentDiv: HTMLDivElement;
@@ -19,9 +20,9 @@ namespace  aufgabe07 {
         gesamtPreis = 0;
         for (let index: number = 0; index < localStorage.length; index++) {
             let key: string = <string>localStorage.key(index);
-            let articleJson: string = <string>localStorage.getItem(key);
+            let produkteJson: string = <string>localStorage.getItem(key);
 
-            let item: Süßigkeit = <Süßigkeit>JSON.parse(articleJson);
+            let item: Süßigkeit = <Süßigkeit>JSON.parse(produkteJson);
 
             gesamtPreis += item.preis;
             buildArticles(item);
@@ -50,18 +51,12 @@ namespace  aufgabe07 {
         let nSüßigkeiten: HTMLParagraphElement = document.createElement("h1");
         nSüßigkeiten.innerHTML = _inputSüßigkeit.name;
         newDiv.appendChild(nSüßigkeiten);
-        console.log(nSüßigkeiten);
 
         //PREIS
         let pSüßigkeiten: HTMLParagraphElement = document.createElement("p");
         pSüßigkeiten.innerHTML = "" + _inputSüßigkeit.preis;
         newDiv.setAttribute("preis", pSüßigkeiten.innerHTML);
         newDiv.appendChild(pSüßigkeiten);
-
-        //BESCHREIBUNG
-        let beSüßigkeiten: HTMLParagraphElement = document.createElement("p");
-        beSüßigkeiten.innerHTML = _inputSüßigkeit.beschreibung;
-        newDiv.appendChild(beSüßigkeiten);
 
         //BUTTON
         let ausEinkaufswagen: HTMLButtonElement = document.createElement("button");
@@ -75,7 +70,7 @@ namespace  aufgabe07 {
         update();
     }
     function setGesamtPreis(): void {
-        pGesamtpreis.innerHTML = "" + gesamtPreis.toFixed(2);
+        pGesamtpreis.innerHTML = "" + gesamtPreis;
     }
 
     function entferneAlles(_event: Event): void {

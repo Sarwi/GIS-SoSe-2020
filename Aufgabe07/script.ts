@@ -84,14 +84,13 @@ namespace aufgabe07 {
             indenEinkaufwagen.setAttribute("preis", süßigkeit[index].preis.toString());
             indenEinkaufwagen.setAttribute("name", süßigkeit[index].name);
             indenEinkaufwagen.setAttribute("img", süßigkeit[index].bild);
-           
+
 
 
 
             switch (süßigkeit[index].kategorie) {
                 case "schokolade":
                     let getContainerSchokolade: HTMLElement = document.getElementById("schokolade")!;
-                    console.log(getContainerSchokolade);
                     getContainerSchokolade.appendChild(newDiv);
                     break;
 
@@ -112,8 +111,8 @@ namespace aufgabe07 {
 
             sicherinlocalStorage(this);
 
-            preisRechnen += this.preis;
-            console.log(preisRechnen.toFixed());
+            preisRechnen += parseFloat((<HTMLButtonElement>_event.target)?.getAttribute("preis")!);
+            console.log(preisRechnen.toFixed(2));
 
 
             //Blase erstellen bei min. 1 Artikel
@@ -136,18 +135,19 @@ namespace aufgabe07 {
                     break;
 
             }
-
-            function schokolade(): void {
-                (<HTMLElement>document.getElementById("schokolade")).style.display = "block";
-                (<HTMLElement>document.getElementById("fruchtgummi")).style.display = "none";
-
-            }
-
-            function fruchtgummi(): void {
-                (<HTMLElement>document.getElementById("fruchtgummi")).style.display = "block";
-                (<HTMLElement>document.getElementById("schokolade")).style.display = "none";
-            }
         }
+
+        function schokolade(): void {
+            (<HTMLElement>document.getElementById("schokolade")).style.display = "block";
+            (<HTMLElement>document.getElementById("fruchtgummi")).style.display = "none";
+
+        }
+
+        function fruchtgummi(): void {
+            (<HTMLElement>document.getElementById("fruchtgummi")).style.display = "block";
+            (<HTMLElement>document.getElementById("schokolade")).style.display = "none";
+        }
+
         let schokoladeButton: HTMLElement = <HTMLElement>document.querySelector("#schokoladeAnzeige");
         console.log(schokoladeButton);
         schokoladeButton.addEventListener("click", handleCategoryClick.bind(schokoladeButton));

@@ -63,7 +63,6 @@ var aufgabe07;
             switch (süßigkeit[index].kategorie) {
                 case "schokolade":
                     let getContainerSchokolade = document.getElementById("schokolade");
-                    console.log(getContainerSchokolade);
                     getContainerSchokolade.appendChild(newDiv);
                     break;
                 case "fruchtgummi":
@@ -78,8 +77,8 @@ var aufgabe07;
             einkaufZaehler++;
             console.log(einkaufZaehler);
             sicherinlocalStorage(this);
-            preisRechnen += this.preis;
-            console.log(preisRechnen.toFixed());
+            preisRechnen += parseFloat(_event.target?.getAttribute("preis"));
+            console.log(preisRechnen.toFixed(2));
             //Blase erstellen bei min. 1 Artikel
             if (einkaufZaehler >= 0) {
                 document.getElementById("artikelBlase")?.appendChild(anzahlBlase);
@@ -97,14 +96,14 @@ var aufgabe07;
                     fruchtgummi();
                     break;
             }
-            function schokolade() {
-                document.getElementById("schokolade").style.display = "block";
-                document.getElementById("fruchtgummi").style.display = "none";
-            }
-            function fruchtgummi() {
-                document.getElementById("fruchtgummi").style.display = "block";
-                document.getElementById("schokolade").style.display = "none";
-            }
+        }
+        function schokolade() {
+            document.getElementById("schokolade").style.display = "block";
+            document.getElementById("fruchtgummi").style.display = "none";
+        }
+        function fruchtgummi() {
+            document.getElementById("fruchtgummi").style.display = "block";
+            document.getElementById("schokolade").style.display = "none";
         }
         let schokoladeButton = document.querySelector("#schokoladeAnzeige");
         console.log(schokoladeButton);

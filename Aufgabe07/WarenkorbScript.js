@@ -1,6 +1,7 @@
 "use strict";
 var aufgabe07;
 (function (aufgabe07) {
+    // Ich weiß Teilaufgabe2 funktioniert nicht :((
     window.addEventListener("load", init);
     let contentDiv;
     let pGesamtpreis;
@@ -18,8 +19,8 @@ var aufgabe07;
         gesamtPreis = 0;
         for (let index = 0; index < localStorage.length; index++) {
             let key = localStorage.key(index);
-            let articleJson = localStorage.getItem(key);
-            let item = JSON.parse(articleJson);
+            let produkteJson = localStorage.getItem(key);
+            let item = JSON.parse(produkteJson);
             gesamtPreis += item.preis;
             buildArticles(item);
         }
@@ -40,16 +41,11 @@ var aufgabe07;
         let nSüßigkeiten = document.createElement("h1");
         nSüßigkeiten.innerHTML = _inputSüßigkeit.name;
         newDiv.appendChild(nSüßigkeiten);
-        console.log(nSüßigkeiten);
         //PREIS
         let pSüßigkeiten = document.createElement("p");
         pSüßigkeiten.innerHTML = "" + _inputSüßigkeit.preis;
         newDiv.setAttribute("preis", pSüßigkeiten.innerHTML);
         newDiv.appendChild(pSüßigkeiten);
-        //BESCHREIBUNG
-        let beSüßigkeiten = document.createElement("p");
-        beSüßigkeiten.innerHTML = _inputSüßigkeit.beschreibung;
-        newDiv.appendChild(beSüßigkeiten);
         //BUTTON
         let ausEinkaufswagen = document.createElement("button");
         ausEinkaufswagen.innerHTML = "Löschen";
@@ -61,7 +57,7 @@ var aufgabe07;
         update();
     }
     function setGesamtPreis() {
-        pGesamtpreis.innerHTML = "" + gesamtPreis.toFixed(2);
+        pGesamtpreis.innerHTML = "" + gesamtPreis;
     }
     function entferneAlles(_event) {
         localStorage.clear();
