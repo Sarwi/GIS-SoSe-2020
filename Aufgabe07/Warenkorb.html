@@ -1,11 +1,48 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Warenkorb</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="WarenkorbScript.js"></script>
+
 </head>
+
 <body>
-    
+    <header>
+        <div class="header">
+
+            <img src="logo.png" alt="logo" class="logo">
+
+            <nav class="Warenkorb">
+                <a href="Warenkorb.html" class="Warenkorb">Warenkorb<img src="Warenkorb.png" alt="Warenkorb"
+                        class="icon"></a>
+                <div id="artikelBlase">
+
+                </div>
+            </nav>
+
+            <nav class="nav">
+                <h1>Ihr Einkaufswagen</h1>
+                <a href="Startseite.html">Home</a>&nbsp;
+                <a href="http://127.0.0.1:5500/Aufgabe07/Startseite.html#Schokolade" id="schokoladeAnzeige">Schokolade</a>&nbsp;
+                <a href="http://127.0.0.1:5500/Aufgabe07/Startseite.html#Fruchtgummi" id="fruchtgummiAnzeige">Fruchtgummi</a>&nbsp;
+
+            </nav>
+        </div>
+    </header>
+    <main>
+        
+         <h2>Ihre ausgewählte Ware</h2>
+         <div>
+            <p id="summe"></p>
+            <p id="gesamtLoeschen"></p>
+        </div>
+        <div class="produktListe"></div>
+    </main>
+
 </body>
+
 </html>
