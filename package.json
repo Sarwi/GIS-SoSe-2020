@@ -1,0 +1,23 @@
+{
+  "name": "gissssw",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "devDependencies": {},
+  "scripts": {
+    "start": "node Aufgabe08/script.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Sarwi/GIS-SoSe-2020.git"
+  },
+  "author": "sarah wild",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Sarwi/GIS-SoSe-2020/issues"
+  },
+  "homepage": "https://github.com/Sarwi/GIS-SoSe-2020#readme",
+  "dependencies": {
+    "@types/node": "^14.0.13"
+  }
+}
