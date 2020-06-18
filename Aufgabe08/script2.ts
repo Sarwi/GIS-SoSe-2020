@@ -6,7 +6,7 @@ namespace Aufgabe08 {
 
     async function communiacate(): Promise<void> {
         let formData: FormData = new FormData(document.forms[0]);
-        let url: string = "https://gis-example.herokuapp.com/";
+        let url: string = "https://gis20sw.herokuapp.com/";
         let query: URLSearchParams = new URLSearchParams(<any>formData);
         url = url + "?" + query.toString();
         await fetch(url);
