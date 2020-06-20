@@ -129,7 +129,7 @@ background-color: whitesmoke;
         width: 120px;
        
     }
-    .Warenkorb div img{
+    .warenkorbliste div img{
         height: 120px;
         width: 120px;
     }
@@ -154,4 +154,15 @@ background-color: whitesmoke;
         color: white;
         text-align: center;
         font-size: unset;
+    }
+    #summe {
+        color: darkmagenta;
+    } 
+    #allesLöschen{
+        width: 120px;
+        margin: 5px;
+        border-radius: 3px;
+        background-color: darkmagenta;
+        color: whitesmoke;
+
     }

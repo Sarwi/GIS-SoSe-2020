@@ -5,11 +5,13 @@ var Artikel;
     let contentDiv;
     let pGesamtpreis;
     let gesamtPreis;
+    let allesLöschen;
     function init(_event) {
         contentDiv = document.querySelector(".warenkorbliste");
         pGesamtpreis = document.querySelector("#summe");
-        pGesamtpreis.addEventListener("click", handleRemoveAll);
         document.getElementById("warenkorbWert")?.appendChild(pGesamtpreis);
+        allesLöschen = document.querySelector("#allesLöschen");
+        allesLöschen.addEventListener("click", handleRemoveAll);
         console.log(localStorage);
         update();
     }
@@ -57,7 +59,7 @@ var Artikel;
     }
     //Gesamtpreis in Header plazieren
     function setGesamtpreis() {
-        pGesamtpreis.innerHTML = "" + gesamtPreis;
+        pGesamtpreis.innerHTML = "Gesamtpreis" + gesamtPreis + "€";
     }
     function handleRemoveAll(_event) {
         localStorage.clear();

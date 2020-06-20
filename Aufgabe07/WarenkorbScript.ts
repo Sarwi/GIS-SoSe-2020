@@ -5,12 +5,14 @@ namespace Artikel {
     let contentDiv: HTMLDivElement;
     let pGesamtpreis: HTMLParagraphElement;
     let gesamtPreis: number;
+    let allesLöschen: HTMLParagraphElement;
 
     function init(_event: Event): void {
         contentDiv = <HTMLDivElement>document.querySelector(".warenkorbliste");
         pGesamtpreis = <HTMLParagraphElement>document.querySelector("#summe");
-        pGesamtpreis.addEventListener("click", handleRemoveAll);
         document.getElementById("warenkorbWert")?.appendChild(pGesamtpreis);
+        allesLöschen = <HTMLParagraphElement>document.querySelector("#allesLöschen");
+        allesLöschen.addEventListener("click", handleRemoveAll);
 
         console.log(localStorage);
         update();
@@ -71,7 +73,7 @@ namespace Artikel {
 
     //Gesamtpreis in Header plazieren
     function setGesamtpreis(): void {
-        pGesamtpreis.innerHTML = "" + gesamtPreis;
+        pGesamtpreis.innerHTML = "Gesamtpreis" + gesamtPreis + "€";
     }
 
 
