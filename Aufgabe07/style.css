@@ -97,7 +97,7 @@ background-color: whitesmoke;
  
         
         
-.produkt { 
+    .produkt { 
         display: inline-block;
         width: auto;
         height: auto;
@@ -131,16 +131,16 @@ background-color: whitesmoke;
         color: whitesmoke;
         
     }
-    #anzahlBlase{
+    #produktBlase{
         background-color: darkmagenta;
-        
+        color: whitesmoke;
         border-radius: 20px;
         margin-top: 20px;
         width: 20px;
         height: 20px;
         margin-left: -15px;
     }
-    #anzahlBlase>p{
+    #produktBlase>p{
         color: white;
         text-align: center;
         font-size: unset;

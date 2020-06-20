@@ -1,15 +1,14 @@
 "use strict";
-var aufgabe07;
-(function (aufgabe07) {
-    // Ich weiß Teilaufgabe2 funktioniert nicht :((
+var Artikel;
+(function (Artikel) {
     window.addEventListener("load", init);
     let contentDiv;
     let pGesamtpreis;
     let gesamtPreis;
     function init(_event) {
-        contentDiv = document.querySelector(".prduktListe");
+        contentDiv = document.querySelector(".warenkorbliste");
         pGesamtpreis = document.querySelector("#summe");
-        pGesamtpreis.addEventListener("click", entferneAlles);
+        pGesamtpreis.addEventListener("click", handleRemoveAll);
         document.getElementById("warenkorbWert")?.appendChild(pGesamtpreis);
         console.log(localStorage);
         update();
@@ -19,49 +18,50 @@ var aufgabe07;
         gesamtPreis = 0;
         for (let index = 0; index < localStorage.length; index++) {
             let key = localStorage.key(index);
-            let produkteJson = localStorage.getItem(key);
-            let item = JSON.parse(produkteJson);
+            let articleJson = localStorage.getItem(key);
+            let item = JSON.parse(articleJson);
             gesamtPreis += item.preis;
-            buildArticles(item);
+            erstelleInhalt(item);
         }
-        setGesamtPreis();
+        setGesamtpreis();
     }
-    function buildArticles(_inputSüßigkeit) {
+    function erstelleInhalt(_inputArticle) {
         //Div erstellen
         let newDiv = document.createElement("div");
         contentDiv.appendChild(newDiv);
-        newDiv.id = _inputSüßigkeit.name;
+        newDiv.id = _inputArticle.name;
         console.log(newDiv.id);
-        //IMG IN DIV PACKEN
-        let bSüßigkeiten = document.createElement("img");
-        bSüßigkeiten.src = _inputSüßigkeit.bild;
-        newDiv.appendChild(bSüßigkeiten);
-        console.log(bSüßigkeiten);
-        //NAME
-        let nSüßigkeiten = document.createElement("h1");
-        nSüßigkeiten.innerHTML = _inputSüßigkeit.name;
-        newDiv.appendChild(nSüßigkeiten);
-        //PREIS
-        let pSüßigkeiten = document.createElement("p");
-        pSüßigkeiten.innerHTML = "" + _inputSüßigkeit.preis;
-        newDiv.setAttribute("preis", pSüßigkeiten.innerHTML);
-        newDiv.appendChild(pSüßigkeiten);
-        //BUTTON
-        let ausEinkaufswagen = document.createElement("button");
-        ausEinkaufswagen.innerHTML = "Löschen";
-        newDiv.appendChild(ausEinkaufswagen);
-        ausEinkaufswagen.addEventListener("click", handleRemoveArticle.bind(_inputSüßigkeit));
+        //Bild erstellen
+        let bildElement = document.createElement("img");
+        bildElement.src = _inputArticle.bild;
+        newDiv.appendChild(bildElement);
+        console.log(bildElement);
+        //Namen geben
+        let name = document.createElement("h3");
+        name.innerHTML = _inputArticle.name;
+        newDiv.appendChild(name);
+        //Preis festlegen
+        let price = document.createElement("p");
+        price.innerHTML = "" + _inputArticle.preis;
+        newDiv.setAttribute("preis", price.innerHTML);
+        newDiv.appendChild(price);
+        //Button
+        let kaufen = document.createElement("button");
+        kaufen.innerHTML = "Löschen";
+        newDiv.appendChild(kaufen);
+        kaufen.addEventListener("click", handleRemoveArticle.bind(_inputArticle));
     }
     function handleRemoveArticle(_event) {
         localStorage.removeItem(this.name);
         update();
     }
-    function setGesamtPreis() {
+    //Gesamtpreis in Header plazieren
+    function setGesamtpreis() {
         pGesamtpreis.innerHTML = "" + gesamtPreis;
     }
-    function entferneAlles(_event) {
+    function handleRemoveAll(_event) {
         localStorage.clear();
         update();
     }
-})(aufgabe07 || (aufgabe07 = {}));
+})(Artikel || (Artikel = {}));
 //# sourceMappingURL=WarenkorbScript.js.map

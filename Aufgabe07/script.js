@@ -1,14 +1,16 @@
 "use strict";
-var aufgabe07;
-(function (aufgabe07) {
-    let einkaufZaehler = 0;
-    let preisRechnen = 0;
-    let zaehlerAnzeigen = document.createElement("p"); //Zahl Anzeigen 
-    let anzahlBlase = document.createElement("div");
-    anzahlBlase.id = "anzahlBlase"; //div erstellen 
-    let süßigkeit = [];
+var Artikel;
+(function (Artikel) {
+    let artikelrechner = 0;
+    let preisBerechnen = 0;
+    //Zähler für die Anzahl erstellen
+    let anzahlZaehler = document.createElement("p");
+    //Blase erstellen beim Einkaufswagen
+    let produktAnzeige = document.createElement("div");
+    produktAnzeige.id = "produktAnzeige";
+    let articles = [];
     window.addEventListener("load", init);
-    //Auf Jason zugreifen, jason daten werden vom Server gezogen 
+    //Json Daten werden vom Server gezogen
     function init() {
         let url = "Produkte.json";
         communicate(url);
@@ -17,99 +19,104 @@ var aufgabe07;
         console.log("Start");
         let response = await fetch(_url);
         console.log("Response", response);
-        süßigkeit = await response.json();
+        articles = await response.json();
         console.log("End");
         buildArticles();
     }
-    function sicherinlocalStorage(_inputSüßigkeit) {
-        let itemString = JSON.stringify(_inputSüßigkeit);
-        let key = "" + _inputSüßigkeit.name;
+    function sichernImLocalStorage(_inputArticle) {
+        //Artikel bauen
+        let itemString = JSON.stringify(_inputArticle);
+        let key = "" + _inputArticle.name; //in localstorage packen
         localStorage.setItem(key, itemString);
         console.log(localStorage);
     }
+    //Produktschleife
     function buildArticles() {
-        for (let index = 0; index < süßigkeit.length; index++) {
-            //div erstellen und anlegen um drauf zugreifen zu können 
+        for (let index = 0; index < articles.length; index++) {
+            console.log(articles[index]);
+            //Div erzeugen
             let newDiv = document.createElement("div");
-            newDiv.setAttribute("class", "div");
+            newDiv.setAttribute("class", "artikel");
             newDiv.setAttribute("id", "produkt" + index);
             document.getElementById("schokolade")?.appendChild(newDiv);
-            //Bild anlegen um es zu erkennen 
-            let bildSüßigkeit = document.createElement("img");
-            bildSüßigkeit.setAttribute("src", süßigkeit[index].bild);
-            bildSüßigkeit.setAttribute("alt", "produkt");
-            bildSüßigkeit.setAttribute("class", "produktbild");
-            document.getElementById("produkt" + index)?.appendChild(bildSüßigkeit);
-            //Name anlegen 
-            let nameSüßigkeit = document.createElement("p");
-            nameSüßigkeit.innerHTML = süßigkeit[index].name;
-            document.getElementById("produkt" + index)?.appendChild(nameSüßigkeit);
-            //Preis
-            let preisSüßigkeit = document.createElement("p");
-            preisSüßigkeit.innerHTML = süßigkeit[index].preis + "€";
-            document.getElementById("produkt" + index)?.appendChild(preisSüßigkeit);
-            //Beschreibung anlegen 
-            let beschreibungSüßigkeit = document.createElement("p");
-            beschreibungSüßigkeit.innerHTML = süßigkeit[index].beschreibung;
-            document.getElementById("produkt" + index)?.appendChild(beschreibungSüßigkeit);
-            //in den Einkaufswagen button anlegen 
-            let indenEinkaufwagen = document.createElement("button");
-            indenEinkaufwagen.addEventListener("click", wagenButton.bind(süßigkeit[index]));
-            indenEinkaufwagen.innerHTML = "in den Einkausfwagen";
-            document.getElementById("produkt" + index)?.appendChild(indenEinkaufwagen);
-            indenEinkaufwagen.setAttribute("preis", süßigkeit[index].preis.toString());
-            indenEinkaufwagen.setAttribute("name", süßigkeit[index].name);
-            indenEinkaufwagen.setAttribute("img", süßigkeit[index].bild);
-            switch (süßigkeit[index].kategorie) {
+            //Produktbild hinzufügen
+            let newBild = document.createElement("img");
+            newBild.setAttribute("src", articles[index].bild);
+            newBild.setAttribute("alt", "produkt");
+            newBild.setAttribute("class", "produktbild");
+            document.getElementById("produkt" + index)?.appendChild(newBild);
+            //Name hinzufügen
+            let newH3 = document.createElement("h3");
+            newH3.innerHTML = articles[index].name;
+            document.getElementById("produkt" + index)?.appendChild(newH3);
+            //Produktbeschreibung hinzufügen
+            let newP = document.createElement("p");
+            newP.innerHTML = articles[index].beschreibung;
+            document.getElementById("produkt" + index)?.appendChild(newP);
+            //Preis hinzufügen
+            let newPreis = document.createElement("p");
+            newPreis.innerHTML = articles[index].preis + "€";
+            document.getElementById("produkt" + index)?.appendChild(newPreis);
+            //Button hinzufügen
+            let newButton = document.createElement("button");
+            newButton.innerHTML = "in den Einkaufswagen";
+            newButton.addEventListener("click", einkaufenBtn.bind(articles[index]));
+            newButton.setAttribute("name", articles[index].name);
+            newButton.setAttribute("img", articles[index].bild);
+            newButton.setAttribute("beschreibung", articles[index].beschreibung);
+            newButton.setAttribute("preis", articles[index].preis.toString());
+            newButton.setAttribute("kategorie", articles[index].kategorie);
+            document.getElementById("produkt" + index)?.appendChild(newButton);
+            document.getElementById("artikel" + index)?.appendChild(newButton);
+            switch (articles[index].kategorie) {
                 case "schokolade":
-                    let getContainerSchokolade = document.getElementById("schokolade");
-                    getContainerSchokolade.appendChild(newDiv);
+                    let getContainerInneneinrichtung = document.getElementById("schokolade");
+                    getContainerInneneinrichtung.appendChild(newDiv);
                     break;
                 case "fruchtgummi":
-                    let getContainerFruchtgummi = document.getElementById("fruchtgummi");
-                    getContainerFruchtgummi.appendChild(newDiv);
-                    break;
-                default:
+                    let getContainerAußeneinrichtung = document.getElementById("fruchtgummi");
+                    getContainerAußeneinrichtung.appendChild(newDiv);
                     break;
             }
         }
-        function wagenButton(_event) {
-            einkaufZaehler++;
-            console.log(einkaufZaehler);
-            sicherinlocalStorage(this);
-            preisRechnen += parseFloat(_event.target?.getAttribute("preis"));
-            console.log(preisRechnen.toFixed(2));
+        function einkaufenBtn(_event) {
+            artikelrechner++;
+            console.log(artikelrechner);
+            sichernImLocalStorage(this);
+            preisBerechnen += parseFloat(_event.target?.getAttribute("preis"));
+            console.log(preisBerechnen.toFixed(2));
             //Blase erstellen bei min. 1 Artikel
-            if (einkaufZaehler >= 0) {
-                document.getElementById("artikelBlase")?.appendChild(anzahlBlase);
+            if (artikelrechner >= 0) {
+                document.getElementById("produktBlase")?.appendChild(produktAnzeige);
             }
-            //Zahl anzeigen 
-            zaehlerAnzeigen.innerHTML = "" + einkaufZaehler;
-            document.getElementById("anzahlBlase")?.appendChild(zaehlerAnzeigen);
+            //Zahl in Blase anzeigen
+            anzahlZaehler.innerHTML = "" + artikelrechner;
+            document.getElementById("produktBlase")?.appendChild(anzahlZaehler);
         }
+        //Kategorien einblenden/ausblenden
         function handleCategoryClick(_click) {
             switch (this.getAttribute("id")) {
-                case "schokoladeAnzeige":
+                case "schokoladebtn":
                     schokolade();
                     break;
-                case "fruchtgummiAnzeige":
+                case "fruchtgummibtn":
                     fruchtgummi();
                     break;
             }
         }
         function schokolade() {
-            document.getElementById("schokolade").style.display = "block";
+            document.getElementById("schokolade").style.display = "inline-grid";
             document.getElementById("fruchtgummi").style.display = "none";
         }
         function fruchtgummi() {
-            document.getElementById("fruchtgummi").style.display = "block";
-            document.getElementById("schokolade").style.display = "none";
+            document.getElementById("schokolade").style.display = "inline-grid";
+            document.getElementById("fruchtgummi").style.display = "none";
         }
-        let schokoladeButton = document.querySelector("#schokoladeAnzeige");
-        console.log(schokoladeButton);
+        //Erstellen einer Variable, Buttonverlinkung
+        let schokoladeButton = document.getElementById("schokoladebtn");
         schokoladeButton.addEventListener("click", handleCategoryClick.bind(schokoladeButton));
-        let fruchtgummiButton = document.querySelector("#fruchtgummiAnzeige");
+        let fruchtgummiButton = document.getElementById("fruchtgummibtn");
         fruchtgummiButton.addEventListener("click", handleCategoryClick.bind(fruchtgummiButton));
     }
-})(aufgabe07 || (aufgabe07 = {}));
+})(Artikel || (Artikel = {}));
 //# sourceMappingURL=script.js.map
