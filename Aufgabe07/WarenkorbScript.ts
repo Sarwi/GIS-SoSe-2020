@@ -52,7 +52,7 @@ namespace Artikel {
 
         //Preis festlegen
         let price: HTMLParagraphElement = document.createElement("p");
-        price.innerHTML = "" + _inputArticle.preis;
+        price.innerHTML = "" + _inputArticle.preis + "€";
         newDiv.setAttribute("preis", price.innerHTML);
         newDiv.appendChild(price);
 

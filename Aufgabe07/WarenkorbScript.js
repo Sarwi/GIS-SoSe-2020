@@ -42,7 +42,7 @@ var Artikel;
         newDiv.appendChild(name);
         //Preis festlegen
         let price = document.createElement("p");
-        price.innerHTML = "" + _inputArticle.preis;
+        price.innerHTML = "" + _inputArticle.preis + "€";
         newDiv.setAttribute("preis", price.innerHTML);
         newDiv.appendChild(price);
         //Button

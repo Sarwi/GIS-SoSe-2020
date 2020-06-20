@@ -16,8 +16,14 @@ b {
     color: darkmagenta;
 }
 
-h3{ 
+h4 {
     color: darkmagenta;
+    font-size: 40px;
+}
+h5 {
+    color: darkmagenta;
+    font-size: 30pxpx;
+
 }
 
    
@@ -122,6 +128,10 @@ background-color: whitesmoke;
         height: 120px;
         width: 120px;
        
+    }
+    .Warenkorb div img{
+        height: 120px;
+        width: 120px;
     }
     .produkt button{
         width: 120px;
