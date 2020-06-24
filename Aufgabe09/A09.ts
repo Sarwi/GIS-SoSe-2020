@@ -20,7 +20,7 @@ namespace Aufgabe08 {
         let response: Response = await fetch(url);
         let responseText: string = await response.text();
         serverResponse.innerHTML = responseText;
-
+        
     }
 
     async function handleJSON(): Promise<void> {
