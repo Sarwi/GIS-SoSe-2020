@@ -1,14 +1,17 @@
 namespace Aufgabe08 {
     let formData: FormData;
     let buttonhtml: HTMLButtonElement = <HTMLButtonElement>document.getElementById("buttonhtml");
-    buttonhtml.addEventListener("click", communiacateHTML);
+    buttonhtml.addEventListener("click", handleHTML);
 
     let buttonjson: HTMLButtonElement = <HTMLButtonElement>document.getElementById("buttonjson");
-    buttonjson.addEventListener("click", communiacateJSON);
+    buttonjson.addEventListener("click", handleJSON);
+    let serverResponse: HTMLElement = <HTMLElement>document.getElementById("server");
 
-    async function communiacateHTML(): Promise<void> {
+
+
+    async function handleHTML(): Promise<void> {
         let formData: FormData = new FormData(document.forms[0]);
-        let url: string = "https://gis20sw.herokuapp.com/";
+        let url: string = "http://localhost:8100";
         url += "/html";
         let query: URLSearchParams = new URLSearchParams(<any>formData);
         url = url + "?" + query.toString();
@@ -16,15 +19,14 @@ namespace Aufgabe08 {
 
         let response: Response = await fetch(url);
         let responseText: string = await response.text();
-        let serverResponse: HTMLElement = <HTMLElement>document.getElementById("server");
         serverResponse.innerHTML = responseText;
 
     }
 
-    async function communiacateJSON(): Promise<void> {
+    async function handleJSON(): Promise<void> {
 
         formData = new FormData(document.forms[0]);
-        let url: string = "https://gis20sw.herokuapp.com/";
+        let url: string = "http://localhost:8100";
         url += "/json";
         let query: URLSearchParams = new URLSearchParams(<any>formData);
         url = url + "?" + query.toString();
@@ -32,6 +34,10 @@ namespace Aufgabe08 {
         let response: Response = await fetch(url);
         let responseText: string = await response.text();
         console.log(responseText);
+        let responseJson: JSON = JSON.parse(responseText);
+        console.log(responseJson);
+        serverResponse.innerHTML = responseText;
+        console.log(serverResponse);
 
     }
 }
