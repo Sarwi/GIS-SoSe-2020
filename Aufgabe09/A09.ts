@@ -25,7 +25,7 @@ namespace Aufgabe08 {
 
         formData = new FormData(document.forms[0]);
         let url: string = "https://gis20sw.herokuapp.com/";
-        url += "/html";
+        url += "/json";
         let query: URLSearchParams = new URLSearchParams(<any>formData);
         url = url + "?" + query.toString();
 
