@@ -11,7 +11,7 @@ namespace Aufgabe08 {
 
     async function handleHTML(): Promise<void> {
         let formData: FormData = new FormData(document.forms[0]);
-        let url: string = "https://lgis20sw.herokuapp.com";
+        let url: string = "https://gis20sw.herokuapp.com";
         url += "/html";
         let query: URLSearchParams = new URLSearchParams(<any>formData);
         url = url + "?" + query.toString();
@@ -20,7 +20,7 @@ namespace Aufgabe08 {
         let response: Response = await fetch(url);
         let responseText: string = await response.text();
         serverResponse.innerHTML = responseText;
-        
+
     }
 
     async function handleJSON(): Promise<void> {
